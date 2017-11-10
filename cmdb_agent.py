@@ -58,14 +58,15 @@ class AssetReporter(object):
         return r.json()
 
     def get_asset_id(self):
-        r = requests.get(self.search_url)
-        if r.status_code == 200:
-            return r.json()['id']
-        return None
-
+        # r = requests.get(self.search_url)
+        # if r.status_code == 200:
+        #     return r.json()['id']
+        # return None
+        return(8)
     def update_asset(self, asset_id):
         put_url = '{0}/{1}/'.format(self.post_url.rstrip('/'), asset_id)
         data = {'server': self.server}
+        print data
         r = requests.put(put_url, data=json.dumps(data), headers={'Content-Type': 'application/json'})
         if r.status_code != 201:
             raise Exception(r.text)

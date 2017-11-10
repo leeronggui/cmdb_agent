@@ -11,7 +11,7 @@ server_url = 'http://127.0.0.1:8000/api/'
 serialnum_prefix = 'AZ-'
 
 # IDC
-idc = 'xxxx'
+idc = 'BEK'
 
 # 用途
 use = 'web'
