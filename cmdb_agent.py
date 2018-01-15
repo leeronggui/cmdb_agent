@@ -67,17 +67,16 @@ class AssetReporter(object):
         put_url = '{0}/{1}/'.format(self.post_url.rstrip('/'), asset_id)
         data = {'server': self.server}
         print data
-        r = requests.put(put_url, data=json.dumps(data), headers={'Content-Type': 'application/json'})
-        if r.status_code != 201:
-            raise Exception(r.text)
-        return r.json()
+        # r = requests.put(put_url, data=json.dumps(data), headers={'Content-Type': 'application/json'})
+        # if r.status_code != 201:
+        #     raise Exception(r.text)
+        # return r.json()
 
     def report(self):
         id_ = self.get_asset_id()
         if id_ is None:
             logging.warn('Asset is not register in cmdb server, create it.')
             return self.create_asset()
-
         return self.update_asset(id_)
 
 
